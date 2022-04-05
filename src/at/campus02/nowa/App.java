@@ -10,6 +10,7 @@ public class App {
     private final PrintStream output;
     private boolean exit = false;  // wen setze auch true Program beendet
     private int figureNr;
+    private int figureGrosse;
     private Figure figure;
 
     // Konstruktor
@@ -46,22 +47,22 @@ public class App {
 
         switch (figureNr){
             case 1:
-                figure = new FigureH();
+                figure = new FigureH(figureGrosse);
                 break;
             case 2:
-            figure = new FigureL();
+            figure = new FigureL(figureGrosse);
             break;
             case 3:
-                figure = new FigureO();
+                figure = new FigureO(figureGrosse);
                 break;
             case 4:
-                figure = new FigureO2();
+                figure = new FigureO2(figureGrosse);
                 break;
             case 5:
-                figure = new FigureI();
+                figure = new FigureI(figureGrosse);
                 break;
             case 6:
-                figure = new FigureMinus();
+                figure = new FigureMinus(figureGrosse);
                 break;
             default: break;
         }
@@ -82,9 +83,11 @@ public class App {
             figureNr = input.nextInt();
             if (figureNr < 1 || figureNr > 6) {
                 output.println("Dies ist keine gültige Grafik!");
-            } else {
-                break;
             }
+
+            output.println("Grosse (1-3)");
+            figureGrosse = input.nextInt();
+            break;
         } while (true);
     }
 }
