@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class App {
     private final Scanner input;
     private final PrintStream output;
-    private boolean exit = false;
+    private boolean exit = false;  // wen setze auch true Program beendet
     private int figureNr;
     private Figure figure;
 
@@ -22,13 +22,13 @@ public class App {
 
     //die Gameloop
     public void Run() {
-        initialize();
-        printState();
+        initialize();  //karte erzeugen,spieler anlegen ->das mach mn nur einmal
+        printState(); //dan get es los mit spiel
 
         while(!exit) {
-            readUserInput();
-            updateState();
-            printState();
+            readUserInput();  //lesen imput
+            updateState(); //verarbeiten imput
+            printState();  //ausgeben
         }
     }
 
@@ -36,7 +36,7 @@ public class App {
         //TODO: Initialisierungen hier durchführen
     }
 
-    private void readUserInput() {
+    private void readUserInput() {  //solte ienlesen was solle ich tun
         //TODO: Alle Eingaben der Benutzer einlesen
         inputFigure();
     }
@@ -47,6 +47,21 @@ public class App {
         switch (figureNr){
             case 1:
                 figure = new FigureH();
+                break;
+            case 2:
+            figure = new FigureL();
+            break;
+            case 3:
+                figure = new FigureO();
+                break;
+            case 4:
+                figure = new FigureO2();
+                break;
+            case 5:
+                figure = new FigureI();
+                break;
+            case 6:
+                figure = new FigureMinus();
                 break;
             default: break;
         }

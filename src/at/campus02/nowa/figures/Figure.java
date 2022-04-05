@@ -5,7 +5,7 @@ public abstract class Figure {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();  // das ist einen Objekt
         for (int row = 0; row < 3; row++) {
             for (int col = 0; col < 3; col++) {
                 sb.append(symbol[col][row]);
